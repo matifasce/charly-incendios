@@ -1,0 +1,658 @@
+/* ==========================================================================
+   1. TIPOGRAFÍA, VARIABLES Y CONFIGURACIÓN BASE
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --accent: #d63031;
+    --bg-light: #f2f4f7;
+    --soft-red: #fff4f4;
+    --soft-gray: #eef2f5;
+    --bg-dark: #f5f5f5;
+    --text-main: #fff4f4;
+    --text-muted: #9e9595;
+    --card-border: rgb(255, 255, 255);
+    --wsp-color: #21c054;
+    --font: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: transparent !important; /* Permitir ver el fondo dinámico de atrás */
+    color: var(--text-main);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ==========================================================================
+   2. ELEMENTOS COMUNES Y BOTONES
+   ========================================================================== */
+.pre-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: var(--text-main);
+}
+
+.btn-modern {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-wsp {
+    background-color: var(--text-main);
+    color: #fff;
+}
+
+.btn-wsp:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.btn-mail {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--card-border);
+}
+
+.btn-mail:hover {
+    background-color: rgba(0,0,0,0.03);
+    border-color: var(--text-main);
+}
+
+/* ==========================================================================
+   3. HEADER Y NAVEGACIÓN
+   ========================================================================== */
+header {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+}
+
+.logo .dot { color: var(--accent); }
+.logo .sub {
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 28px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.25s;
+}
+
+nav a:hover { color: var(--accent); }
+
+/* ==========================================================================
+   4. SECCIÓN HERO (INICIO)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("fondo.png.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.58);
+}
+
+.hero-top {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+.hero-logo { width: 220px; }
+.hero-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.hero-whatsapp img {
+    width: 26px;
+    height: 26px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    padding: 40px 20px;
+}
+
+.hero-section h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.hero-center-logo {
+    width: 220px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 35px;
+    color: rgba(255,255,255,.92);
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 40px;
+    background: #63b32e;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 40px;
+    transition: .3s;
+}
+
+.hero-button:hover {
+    background: #4f9723;
+    transform: translateY(-3px);
+}
+
+.hero-accent-box {
+    position: absolute;
+    right: 0;
+    top: 15%;
+    width: 40%;
+    height: 70%;
+    background-color: #ededed;
+    z-index: 1;
+    border-radius: 8px;
+    opacity: 0.7;
+    overflow: hidden;
+}
+
+.hero-accent-box img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   5. SECCIÓN NOSOTROS
+   ========================================================================== */
+.about-section {
+    padding: 100px 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+    background: rgba(13, 14, 16, 0.25) !important;
+    backdrop-filter: blur(3px);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-main-text h2 { margin-bottom: 24px; max-width: 600px; }
+.about-main-text p { font-size: 17px; color: var white; margin-bottom: 20px; }
+.about-main-text .secondary-p {
+    font-size: 15px;
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+    color: #ffffff;
+}
+
+.about-stats-aside { display: flex; flex-direction: column; gap: 20px; }
+.stat-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+    transition: transform 0.3s;
+}
+.stat-card:hover { transform: translateY(-4px); }
+.large-stat { border-left: 4px solid var(--text-main); }
+.alert-stat { border-color: var(--text-main); background-color: #2b2f35; }
+.alert-stat .number { color: #fff !important; }
+.alert-stat .label { color: #9aa2ac !important; }
+.stat-group-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.stat-card .number {
+    display: block;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+.stat-card .label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   6. SECCIÓN SERVICIOS
+   ========================================================================== */
+.services-section {
+    padding: 100px 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-top: 1px solid var(--card-border);
+  
+    backdrop-filter: blur(3px);
+}
+
+.container-header { margin-bottom: 50px; }
+.services-modern-list { display: flex; flex-direction: column; }
+.service-row-item {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr 1fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--card-border);
+    align-items: start;
+    transition: background 0.25s;
+}
+.service-row-item:hover { background-color: rgba(255, 255, 255, 0.01); }
+.service-meta { display: flex; align-items: center; gap: 20px; }
+.service-num {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--accent);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.service-meta h3 { font-size: 20px; font-weight: 700; color: var(--text-main); }
+.service-desc { font-size: 15px; color: var white; }
+.service-details ul { list-style: none; }
+.service-details ul li {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 16px;
+}
+.service-details ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   7. SECCIÓN GALERÍA Y ESTRUCTURA ULTRASEGURA DEL CARRUSEL
+   ========================================================================== */
+.gallery-section {
+    padding: 100px 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+    background: rgba(13, 14, 16, 0.25) !important;
+    backdrop-filter: blur(3px);
+}
+
+.section-subtitle { font-size: 15px; color: var white; margin-top: 8px; }
+
+.category-block {
+    margin-top: 50px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.category-info h3 {
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--text-main);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* El Contenedor del carrusel con look vidriado moderno */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden !important;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    height: 480px; 
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block !important; 
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+/* Solo la foto activa rompe la opacidad */
+.carousel-slide.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 2;
+}
+
+.carousel-slide img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.4s;
+}
+
+.carousel-slide:hover img {
+    transform: scale(1.02);
+}
+
+.slide-meta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(13, 14, 16, 0.95) 75%);
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.slide-meta span {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(13, 14, 16, 0.85);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 18px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.carousel-nav-btn:hover {
+    background: #ff3333;
+    border-color: #ff3333;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+
+/* ==========================================================================
+   8. SECCIÓN CONTACTO Y FOOTER
+   ========================================================================== */
+.contact-section {
+    background-color: var(--bg-dark);
+    color: #fff;
+    padding: 100px 24px;
+    background: rgba(13, 14, 16, 0.25) !important;
+    backdrop-filter: blur(3px);
+}
+
+.contact-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.contact-left h2 { color: #fff; font-size: 46px; margin-bottom: 24px; }
+.contact-left p { color: #a0a5ad; font-size: 17px; margin-bottom: 40px; }
+.contact-info-list { display: flex; flex-direction: column; gap: 24px; }
+
+.c-info-item span {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+.c-info-item p { color: #fff; font-size: 16px; margin-bottom: 0; }
+
+.action-box {
+    background: #16181c;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #242830;
+}
+.action-box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.direct-link {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    transition: all 0.25s;
+}
+.direct-link:last-child { margin-bottom: 0; }
+
+.wsp-link {
+    background-color: rgba(33, 192, 84, 0.1);
+    border: 1px solid rgba(33, 192, 84, 0.2);
+}
+.wsp-link:hover { background-color: var(--wsp-color); }
+
+.mail-link {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.mail-link:hover { background-color: #fff; }
+
+.direct-link .link-title { display: block; font-size: 16px; font-weight: 700; color: #fff; }
+.wsp-link:hover .link-title, .mail-link:hover .link-title { color: var(--bg-dark); }
+.direct-link .link-sub { display: block; font-size: 13px; color: #8a929a; margin-top: 4px; }
+.wsp-link:hover .link-sub, .mail-link:hover .link-sub { color: rgba(13, 14, 16, 0.7); }
+
+footer {
+    background-color: #08090a;
+    padding: 30px 24px;
+    border-top: 1px solid #16181c;
+}
+.footer-container { max-width: 1300px; margin: 0 auto; text-align: center; }
+.footer-container p { font-size: 13px; color: #495057; }
+
+/* WhatsApp Flotante */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(37,211,102,.4);
+    z-index: 9999;
+}
+.floating-whatsapp img { width: 30px; }
+
+/* ==========================================================================
+   9. IMAGEN DE FONDO GENERAL PARALLAX (CAPA INFERIOR)
+   ========================================================================== */
+.background-blur-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image: url('fondo1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /* Efecto para desplazar un poco hacia abajo y priorizar la parte de arriba */
+    background-position: center calc(50% + 120px);
+    
+    /* Filtro de nitidez suave (Casi sin blur para conservar detalle) */
+    filter: blur(1px);
+    transform: scale(1.03);
+}
+
+.background-blur-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 14, 16, 0.20); /* Capa oscura equilibrada */
+}
+
+/* ==========================================================================
+   10. RESPONSIVO AVANZADO
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .about-container, .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .service-row-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 30px 0;
+    }
+    .hero-accent-box {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 42px; }
+    .hero-section { padding-top: 120px; }
+    .nav-container { flex-direction: column; gap: 16px; }
+    nav a { margin: 0 12px; }
+    .stat-group-row { grid-template-columns: 1fr; }
+    .category-block, .action-box { padding: 20px; }
+    
+    /* Adaptaciones de Carrusel en celular */
+    .carousel-wrapper { height: 340px; }
+    .carousel-nav-btn { width: 38px; height: 38px; font-size: 14px; }
+    .slide-meta span { font-size: 13px !important; }
+}
