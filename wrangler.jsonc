@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "charly-incendios",
+  "compatibility_date": "2026-06-23",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "charly insendios"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
